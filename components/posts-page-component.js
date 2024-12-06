@@ -3,7 +3,6 @@ import { renderHeaderComponent } from "./header-component.js";
 import { posts, goToPage } from "../index.js";
 
 export function renderPostsPageComponent({ appEl }) {
-  // TODO: реализовать рендер постов из api - done
   console.log("Актуальный список постов:", posts);
 
   /**
