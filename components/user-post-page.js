@@ -2,8 +2,8 @@ import { USER_POSTS_PAGE } from "../routes.js";
 import { renderHeaderComponent } from "./header-component.js";
 import { posts, goToPage } from "../index.js";
 
-export function renderPostsPageComponent({ appEl }) {
-  console.log("Актуальный список постов:", posts);
+export function renderUserPageComponent({ appEl }) {
+  console.log("Список постов пользователя:", posts);
 
   /**
    * TODO: чтобы отформатировать дату создания поста в виде "19 минут назад"
@@ -14,6 +14,7 @@ export function renderPostsPageComponent({ appEl }) {
       return `
               <div class="page-container">
                 <div class="header-container"></div>
+                
                 <ul class="posts">
                   <li class="post" data-id="${post.id}">
                     <div class="post-header" data-user-id="${post.user.id}">
