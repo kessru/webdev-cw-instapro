@@ -9,20 +9,11 @@ export function renderUserPageComponent({ appEl }) {
    * TODO: чтобы отформатировать дату создания поста в виде "19 минут назад"
    * можно использовать https://date-fns.org/v2.29.3/docs/formatDistanceToNow
    */
-  const appHtml = posts
+  const appUlHtml = posts
     .map((post) => {
       return `
-              <div class="page-container">
-                <div class="header-container"></div>
                 
-                <ul class="posts">
                   <li class="post" data-id="${post.id}">
-                    <div class="post-header" data-user-id="${post.user.id}">
-                        <img src="${
-                          post.user.imageUrl
-                        }" class="post-header__user-image">
-                        <p class="post-header__user-name">${post.user.name}</p>
-                    </div>
                     <div class="post-image-container">
                       <img class="post-image" src="${post.imageUrl}">
                     </div>
@@ -46,10 +37,24 @@ export function renderUserPageComponent({ appEl }) {
                       ${post.createdAt}
                     </p>
                   </li>
-                </ul>
-              </div>`;
+                
+              `;
     })
     .join("");
+
+  const appHtml = posts.map((post) => {
+    return `
+            <div class="page-container">
+                <div class="header-container"></div>
+                <div class="post-user-header" data-user-id="${post.user.id}">
+                        <img src="${post.user.imageUrl}" class="post-user-header__user-image">
+                        <p class="post-user-header__user-name">${post.user.name}</p>
+                    </div>
+                    <ul class="posts">
+                    ${appUlHtml}
+                    </ul>
+                    </div>`;
+  });
 
   appEl.innerHTML = appHtml;
 

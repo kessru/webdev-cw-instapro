@@ -46,7 +46,7 @@
   margin: 0;
 }
 
-.post-header {
+.post-header, .post-user-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,12 +54,22 @@
   cursor: pointer;
 }
 
-.post-header__user-image {
+.post-header__user-image, .post-user-header__user-image {
   width: 40px;
   height: 40px;
   object-fit: cover;
   border-radius: 40px;
   margin-right: 10px;
+}
+
+.post-user-header__user-image {
+  width: 70px;
+  height: 70px;
+}
+
+.post-user-header__user-name {
+  font-size: 28px;
+  line-height: 35px;
 }
 
 .post-image-container {
@@ -107,7 +117,7 @@
   color: #8a8a8a;
 }
 
-.post + .post {
+.post+.post {
   margin-top: 20px;
 }
 
