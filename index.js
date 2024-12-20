@@ -68,7 +68,7 @@ export const goToPage = (newPage, data) => {
     }
 
     if (newPage === USER_POSTS_PAGE) {
-      // TODO: реализовать получение постов юзера из API
+    
       console.log("Открываю страницу пользователя: ", data.userId);
 
       page = LOADING_PAGE;
@@ -137,7 +137,6 @@ const renderApp = () => {
   }
 
   if (page === USER_POSTS_PAGE) {
-    // TODO: реализовать страницу фотографию пользвателя
     return renderUserPageComponent({ appEl });
   }
 };
